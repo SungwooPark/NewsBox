@@ -2,21 +2,21 @@
 	
 We got a lot of feedback in the first half of our review. The suggestions that most stood out to us are listed below; the order reflects how useful we find the suggestion (most useful on top).
 
-*Analyze Tweets from people who follow our news sources.
-*Compare Twitter sentiment analysis to actual public opinion polls.
-*Use sentiment bar graphs to visualize the data (with a time slider to show how they fluctuate over time).
-*Look at the public opinion polls runs by our news sources.
-*Compare trending hashtags and the frequency at which articles related to that hashtag are being published.
+* Analyze Tweets from people who follow our news sources.
+* Compare Twitter sentiment analysis to actual public opinion polls.
+* Use sentiment bar graphs to visualize the data (with a time slider to show how they fluctuate over time).
+* Look at the public opinion polls runs by our news sources.
+* Compare trending hashtags and the frequency at which articles related to that hashtag are being published.
 
-	We want to examine the possibility of incorporating each of these suggestions into our project, especially the first two. People who follow our news sources are more likely to be influenced by them, and it would be interesting to compare the polarities of the news sources, their followers on Twitter, and the general Twitter population. We should be able to easily refine our Tweets-search to collect Tweets from both the general Twitter population and followers of specific news sources -- in other words, it should be easy to incorporate that idea into our current plan.  
+We want to examine the possibility of incorporating each of these suggestions into our project, especially the first two. People who follow our news sources are more likely to be influenced by them, and it would be interesting to compare the polarities of the news sources, their followers on Twitter, and the general Twitter population. We should be able to easily refine our Tweets-search to collect Tweets from both the general Twitter population and followers of specific news sources -- in other words, it should be easy to incorporate that idea into our current plan.  
 
 Also, while Twitter is one way to measure public opinion, another, possibly more comprehensive way to measure public opinion is actual public opinion polls. While they will undoubtedly be more limiting as far as topics and collecting data over time are concerned, they should be useful in seeing how legitimate Twitter is as a source of public opinion. Perhaps, our question should really be “Is there a causal relationship between the polarity of news sources and Twitter users towards different topics?” Again, it should be easy to incorporate this suggestion into our project -- it’s easy to collect data from public opinion polls, although the amount of data will be relatively small. 
 
 Based on our discussion, we came up with a few new questions. 
 
-*How to incorporate more topics into our analysis - people seem to be interested in more than what we are offering. Especially, it would be nice to incorporate feedback #1 and #2 to our project.
-*How do we present our findings in a simple yet comprehensible formats?
-*Is it worth having an interactive data? For example, a data set with time slider that shows the change of data over time - it will take long time to implement this feature, but is it worth the time and effort? Do people find it very useful and informative to have an interactive feature of the data analysis?
+* How to incorporate more topics into our analysis - people seem to be interested in more than what we are offering. Especially, it would be nice to incorporate feedback #1 and #2 to our project.
+* How do we present our findings in a simple yet comprehensible formats?
+* Is it worth having an interactive data? For example, a data set with time slider that shows the change of data over time - it will take long time to implement this feature, but is it worth the time and effort? Do people find it very useful and informative to have an interactive feature of the data analysis?
 
 #Review Process Reflection
 
