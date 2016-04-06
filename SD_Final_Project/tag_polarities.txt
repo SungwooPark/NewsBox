@@ -1,0 +1,19 @@
+(lp0
+(dp1
+S'women'
+p2
+(lp3
+(I3
+F0.8308764300353686
+tp4
+asa(dp5
+S'social media'
+p6
+(lp7
+(I1
+F0.15546850654719563
+tp8
+a(I7
+F0.9813421546064774
+tp9
+asa.
