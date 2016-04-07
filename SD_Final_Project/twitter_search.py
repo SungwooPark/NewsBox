@@ -1,31 +1,31 @@
 import twitter
 import indicoio
 from indicoio import sentiment, political
+from config import consumer_key,consumer_secret,access_token_key,access_token_secret
 
 
-indicoio.config.api_key = 
-api = twitter.Api(consumer_key = ,
-	consumer_secret = ,
-	access_token_key = ,
-	access_token_secret = )
+indicoio.config.api_key = '863dee4f6fe69b9f62bf9b5d1ede7dd3'
+api = twitter.Api(consumer_key = consumer_key,
+	consumer_secret = consumer_secret,
+	access_token_key = access_token_key,
+	access_token_secret = access_token_secret)
 
 
-def collect_tweets(search_term,count,location):
+def collect_tweets(search_term,count):
 	results = api.GetSearch(term = search_term,
-		count = count,
-		geocode = location)
+		count = count)
 	tweets = []
 	for tweet in results:
 		text = tweet.text.encode('utf-8')
 		tweets.append(text)
-		#print text
+		print tweet.coordinates
 	return tweets
 		
 
-def data_analysis(search_term,count,location):
+def data_analysis(search_term,count):
 	"""analyze data to find the average polarity; return average 
 	polarity of data from a given source"""
-	data = collect_tweets(search_term,count,location)
+	data = collect_tweets(search_term,count,)
 	polarity_compilation = [] #will find average of this list
 	for entry in data: #run through each Tweet
 		entry_analysis = sentiment(entry) #analyze each entry
@@ -35,10 +35,6 @@ def data_analysis(search_term,count,location):
 	return search_term, average_polarity
 
 search_term = 'Bern'
-count = 200
-lat_long_range1 = [40.712784,-74.005941,'300mi'] #NYC
-lat_long_range2 = [32.318231,-86.902298,'300mi'] #Hicksville,AL
+count = 10
 
-#print collect_tweets(search_term,count,lat_long_range)
-print data_analysis(search_term,count,lat_long_range1)
-print data_analysis(search_term,count,lat_long_range2)
+print data_analysis(search_term,count)
