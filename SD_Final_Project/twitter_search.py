@@ -1,10 +1,10 @@
 import twitter
 import indicoio
 from indicoio import sentiment, political
-from config import consumer_key,consumer_secret,access_token_key,access_token_secret
+from config import indico_key,consumer_key,consumer_secret,access_token_key,access_token_secret
 
 
-indicoio.config.api_key = '863dee4f6fe69b9f62bf9b5d1ede7dd3'
+indicoio.config.api_key = indico_key
 api = twitter.Api(consumer_key = consumer_key,
 	consumer_secret = consumer_secret,
 	access_token_key = access_token_key,
@@ -18,7 +18,6 @@ def collect_tweets(search_term,count):
 	for tweet in results:
 		text = tweet.text.encode('utf-8')
 		tweets.append(text)
-		print tweet.coordinates
 	return tweets
 		
 
