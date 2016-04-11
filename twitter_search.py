@@ -50,7 +50,7 @@ def geo_processing(search_term,count):
 		return geo_dict
 
 def data_analysis(search_term,count):
-	"""analyzes tweet text, returns dict[location] = polarity"""
+	"""analyzes tweet text, returns dict[location] = average polarity"""
 	data = geo_processing(search_term,count)
 	map_pol = dict()
 	for location, tweets in data.items(): #run through each dict item
