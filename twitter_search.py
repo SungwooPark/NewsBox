@@ -11,13 +11,23 @@ api = twitter.Api(consumer_key = consumer_key,
 
 def collect_tweets(search_term,count):
 	"""searches tweets using search term, returns geotagged tweets"""
-	results = api.GetSearch(term = search_term,count = count)
+	i = None
 	tweets = []
-	for tweet in results:
-		if tweet.coordinates == None:
-			pass
-		else:
-			tweets.append(tweet)
+	rep = 1
+	for n in range(10):
+		results = api.GetSearch(term = search_term,
+			count = 100,
+			result_type = 'recent',
+			max_id = i)
+		for tweet in results:
+			if tweet.coordinates == None:
+				i = tweet.id - 1 #starts next loop after last tweet 
+			else:
+				print tweet.coordinates
+				tweets.append(tweet)
+				i = tweet.id - 1
+		print rep
+		rep += 1
 	return tweets #returns list of tweet objects if they have a geotag
 		
 def geo_processing(search_term,count):
@@ -29,7 +39,7 @@ def geo_processing(search_term,count):
 	mw = []
 	geo_dict = dict()
 	if data == []:
-		"No geotags in dataset"
+		return "No geotags in this dataset"
 	else:
 		for tweet in data: #create dict --> key is coordinates, value is text
 			geotag = tweet.coordinates
@@ -52,6 +62,8 @@ def geo_processing(search_term,count):
 def data_analysis(search_term,count):
 	"""analyzes tweet text, returns dict[location] = average polarity"""
 	data = geo_processing(search_term,count)
+	if type(data) == str:
+		return search_term, data
 	map_pol = dict()
 	for location, tweets in data.items(): #run through each dict item
 		polarity_compilation = [] #will find average of this list
@@ -64,8 +76,8 @@ def data_analysis(search_term,count):
 		map_pol[location] = sum(polarity_compilation)/len(polarity_compilation)
 	return search_term, map_pol
 
-search_term = '#NationalSiblingDay'
-count = 100000
+search_term = '#mondaymotivation'
+count = 100
 
 print data_analysis(search_term,count)
 #print geo_processing(search_term,count)
