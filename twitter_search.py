@@ -34,11 +34,10 @@ def collect_tweets(search_term,count):
     return tweets #returns list of tweet objects if they have a geotag
 
 def geo_collect_tweets(search_term,latitude,longitude,radius):
-    """search for tweets within certain latitude and longitude with certain keyword in them.
+    """search for tweets within certain radius of latitude and longitude with certain keyword in them.
         Returns the list of tweet texts
     """
     tweets = []
-    #results = api.GetSearch(term = search_term, count=100, result_type = 'recent', geocode=(42.781157, -71.398720, "250mi"))
     results = api.GetSearch(term = search_term, count=100, result_type = 'recent', geocode=(latitude, longitude, radius))
     for tweet in results:
         tweets.append(tweet.text)
@@ -101,7 +100,8 @@ def geo_data_analysis(search_term):
     S_text = geo_collect_tweets(search_term,33.000000,-84.000000,'500mi')
     MW_text = geo_collect_tweets(search_term,40.000000,-100.000000,'1000mi')
     W_text = geo_collect_tweets(search_term,35.000000,-120.000000,'250mi')
-    
+   
+    #A list of sentiment values from each region 
     NE_sentiment_values = []
     for tweet in NE_text:
         NE_sentiment_values.append(sentiment(tweet))
@@ -132,6 +132,3 @@ search_term = '#mondaymotivation'
 count = 100
 
 geo_data_analysis('#bernie')
-#print geo_collect_tweets('#trump',42.781158,-71.398720,'250mi')
-#print data_analysis(search_term,count)
-#print geo_processing(search_term,count)
