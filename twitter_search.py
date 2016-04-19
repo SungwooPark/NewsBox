@@ -1,6 +1,7 @@
 import twitter
 import indicoio
-from indicoio import sentiment, political
+import sys
+from indicoio import sentiment
 from config import indico_key,consumer_key,consumer_secret,access_token_key,access_token_secret
 
 indicoio.config.api_key = indico_key
@@ -16,7 +17,7 @@ def geo_collect_tweets(search_term,latitude,longitude,radius):
     i = None
     tweets = []
     rep = 1
-    for n in range(10): #can only search 100 tweets at a time, so run search multiple times
+    for n in range(2): #can only search 100 tweets at a time, so run search multiple times
     	results = api.GetSearch(term = search_term, 
     		count = 100, 
     		result_type = 'recent', 
@@ -26,7 +27,6 @@ def geo_collect_tweets(search_term,latitude,longitude,radius):
             tweets.append(tweet.text)
         i = tweet.id - 1 #want it to start at the tweet after the last tweet
         rep += 1
-    print len(set(tweets))
     return list(set(tweets)) #set gets rid of repititve tweets, but need to return a list
 
 def geo_data_analysis(search_term):
@@ -52,9 +52,9 @@ def geo_data_analysis(search_term):
     MW_avg = sum(MW_sentiment_values)/len(MW_sentiment_values)
     W_avg = sum(W_sentiment_values)/len(W_sentiment_values)
 
-    print 'NE_avg', NE_avg
-    print 'S_avg',S_avg
-    print 'MW_avg',MW_avg
-    print 'W_avg',W_avg
+    print 'Northeast: ', NE_avg
+    print 'South:     ',S_avg
+    print 'Midwest:   ',MW_avg
+    print 'West:      ',W_avg
 
-geo_data_analysis('#bernie')
+geo_data_analysis(str(sys.argv[1]))
