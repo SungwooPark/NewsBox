@@ -1,0 +1,55 @@
+import csv
+from BeautifulSoup import BeautifulSoup
+
+def color_mapper(value):
+    '''
+    Map a value between 0 and 1 to rgb value. 0 is blue, 1 is red
+    Returns a tuple of rgb value
+    '''
+    
+    red = int(value*255)
+    blue = int(255-value*255)
+    return (red, 0 ,blue)
+
+def map_states(w_value,s_value,ne_value,mw_value):
+    '''
+        Given average sentiment value of each region, saves a choropleth map representing different sentiment value in different US region.
+    '''
+    svg = open('Blank_US_Map.svg','r').read()
+    soup = BeautifulSoup(svg, selfClosingTags=['defs','sodipodi:namedview'])
+
+    new_map = open('choropleth_map.svg','w')    
+
+    #Find states
+    paths = soup.findAll('path')
+
+    path_style = '''font-size:12px;fill-rule:nonzero;stroke:#FFFFFF;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:butt;
+    marker-start:none;stroke-linejoin:bevel;fill:'''
+
+    #states categorization
+    west = ["MT","WY","CO","NM","ID","UT","AZ","NV","WA","OR","CA"]
+    south = ['FL','GA','NC','SC','VA','WV','DE','AL','KY','MS','TN','AR','LA','OK','TX']
+    northeast = ['MD','CT','DE','ME','MA','NH','NJ','NY','PA','RI','VT']
+    midwest = ['ND','SD','NE','KS','MN','IA','MO','WI','IL','MI','IN','OH']
+
+    for p in paths:
+        try:
+            if p['id'] in west:
+                color = 'rgb' + str(color_mapper(w_value))
+                p['style'] = path_style + color
+            if p['id'] in south:
+                color = 'rgb' + str(color_mapper(s_value))
+                p['style'] = path_style + color
+            if p['id'] in northeast:
+                color = 'rgb' + str(color_mapper(ne_value))
+                p['style'] = path_style + color
+            if p['id'] in midwest:
+                color = 'rgb' + str(color_mapper(mw_value))
+                p['style'] = path_style + color
+        except:
+            continue 
+
+    new_map.write(soup.prettify())
+    new_map.close()
+
+map_states(1,0.75,0.5,0.25)
