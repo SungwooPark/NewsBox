@@ -3,6 +3,7 @@ import indicoio
 import sys
 from indicoio import sentiment
 from config import indico_key,consumer_key,consumer_secret,access_token_key,access_token_secret
+import color_map
 
 indicoio.config.api_key = indico_key
 api = twitter.Api(consumer_key = consumer_key,
@@ -52,9 +53,8 @@ def geo_data_analysis(search_term):
     MW_avg = sum(MW_sentiment_values)/len(MW_sentiment_values)
     W_avg = sum(W_sentiment_values)/len(W_sentiment_values)
 
-    print 'Northeast: ', NE_avg
-    print 'South:     ',S_avg
-    print 'Midwest:   ',MW_avg
-    print 'West:      ',W_avg
+    return [W_avg,S_avg,NE_avg,MW_avg]
 
-geo_data_analysis(str(sys.argv[1]))
+average_sentiments = geo_data_analysis(str(sys.argv[1]))
+
+color_map.map_states(average_sentiments[0],average_sentiments[1],average_sentiments[2],average_sentiments[3])
