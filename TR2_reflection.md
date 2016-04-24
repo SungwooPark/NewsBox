@@ -4,7 +4,7 @@ Mary Keenan and Sung Park
 Technical Review 2 Reflection
 
 
-Feedback and Decisions
+#Feedback and Decisions
 
 The primary focus of our review was to see if there was anything we could add to our program that would make it more interesting. It seems like more than anything else, people want us to shrink the areas we’re searching -- to refine and increase our searches so that we’re looking at more specific areas (maybe states) rather than just four massive regions that make up the continental US. We hope to break up the regions we have right now so our results are more specific, but it’s hard, because Twitter’s geotag search takes in a point and a radius, so searching for tweets in an area like the east or west coast isn’t easy (because they’re long and skinny -- not circle material). We’ll try to search more than just four massive regions, but we won’t be able to do each state individually. 
 
@@ -22,7 +22,7 @@ Some new questions:
 * Should we show that we don’t cover entire regions with our tweet search (we search in a circle), and if so, how?
 		
 
-Review Process Reflection
+#Review Process Reflection
 
 Overall, the review went well. We had more focused questions this time around, because we’re farther along in the project. While this helped us get the feedback we really needed instead of some less relevant suggestions, it also meant that overall we got less feedback than last time, because there was less room for people to be creative. We got answers to most of our key questions -- no one came up with a better way for us to visualize our sentiment data (we’re using a choropleth map right now), but we got suggestions on what to add to our program and how to make our maps easier to read.
 
