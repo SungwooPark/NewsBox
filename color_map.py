@@ -6,6 +6,13 @@ def color_mapper(value):
     Map a value between 0 and 1 to rgb value. 0 is blue, 1 is red
     Returns a tuple of rgb value
     '''
+    if value < 0.2:
+        value = 0.2
+    elif value > 0.8:
+        value = 0.8 
+    #remapping value to rgb range
+    value -= 0.2
+    value = value/0.6
     
     red = int(value*255)
     blue = int(255-value*255)
@@ -51,5 +58,3 @@ def map_states(w_value,s_value,ne_value,mw_value):
 
     new_map.write(soup.prettify())
     new_map.close()
-
-map_states(1,0.75,0.5,0.25)
