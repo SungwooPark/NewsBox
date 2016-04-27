@@ -18,15 +18,20 @@ def color_mapper(value):
     blue = int(255-value*255)
     return (red, 0 ,blue)
 
-def map_states(w_value,s_value,ne_value,mw_value):
+def map_states(w_value,s_value,ne_value,mw_value,search_query):
     '''
         Given average sentiment value of each region, saves a choropleth map representing different sentiment value in different US region.
     '''
     svg = open('Blank_US_Map.svg','r').read()
     soup = BeautifulSoup(svg, selfClosingTags=['defs','sodipodi:namedview'])
 
-    new_map = open('choropleth_map.svg','w')    
+    new_map = open('choropleth_map.svg','w') 
 
+    #Finding text tag that will display a topic keyword
+    soup.find(text="US Map").replaceWith(search_query)
+    text = soup.style
+    soup.find('text')['x'] = 480 - (len(search_query)/2 * 35)
+    
     #Find states
     paths = soup.findAll('path')
 

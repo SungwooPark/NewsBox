@@ -57,4 +57,4 @@ def geo_data_analysis(search_term):
 
 average_sentiments = geo_data_analysis(str(sys.argv[1]))
 
-color_map.map_states(average_sentiments[0],average_sentiments[1],average_sentiments[2],average_sentiments[3])
+color_map.map_states(average_sentiments[0],average_sentiments[1],average_sentiments[2],average_sentiments[3],str(sys.argv[1]))
