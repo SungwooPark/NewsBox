@@ -1,4 +1,5 @@
 import csv
+import webbrowser
 from BeautifulSoup import BeautifulSoup
 
 def color_mapper(value):
@@ -69,3 +70,4 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
 
     new_map.write(soup.prettify())
     new_map.close()
+    webbrowser.open('choropleth_map.svg')
