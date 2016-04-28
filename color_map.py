@@ -23,7 +23,7 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
         Given average sentiment value of each region, saves a choropleth map representing different sentiment value in different US region.
     '''
     svg = open('Blank_US_Map.svg','r').read()
-    soup = BeautifulSoup(svg, selfClosingTags=['defs','sodipodi:namedview'])
+    soup = BeautifulSoup(svg, selfClosingTags=['defs','sodipodi:namedview','path'])
 
     new_map = open('choropleth_map.svg','w') 
 
@@ -31,7 +31,13 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
     soup.find(text="US Map").replaceWith(search_query)
     text = soup.style
     soup.find('text')['x'] = 480 - (len(search_query)/2 * 35)
-    
+   
+    #Display sentiment value
+    soup.find(text="Northeastern Value").replaceWith("NE: {0:.5f}".format(ne_value))
+    soup.find(text="West Value").replaceWith("W: {0:.5f}".format(w_value))
+    soup.find(text="Midwest Value").replaceWith("MW: {0:.5f}".format(mw_value))
+    soup.find(text="South Value").replaceWith("S: {0:.5f}".format(s_value))
+ 
     #Find states
     paths = soup.findAll('path')
 
