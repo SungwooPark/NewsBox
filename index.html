@@ -44,6 +44,44 @@
 
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
 
+<h3>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results</h3>
+
+<p>Screenshots of what our program produces.</p>
+
+<h3>
+<a id="evolution-of-NewsBox" class="anchor" href="#evolution-of-NewsBox" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evolution of NewsBox</h3>
+
+<p>NewsBox wasn't always the glamorous tweet-sentiment-choropleth-map-producing program you see now. Once upon a time, NewsBox had a very different mission: 
+We wanted to see if there was a causal relationship between the positivity of news sources and public opinion towards different topics. 
+We even created a mock-up of what our program might produce. </p>
+![NewsBox's Original Vision](Desktop/dumb_map.jpg)
+
+<p>After our first technical review, we came up with a better idea. Rather than produce line graphs of average media and Twitter polarity over time towards
+a certain search term, we could produce a choropleth map that compared the polarity of tweets from different regions in the US. We scrapped the News part of NewsBox
+and began working on our new idea. We started with a blank map of the US in the form of an SVG file. We made changes to our original
+code so we could collect Tweets based on location and we wrote new code to produce a choropleth map given average polarity values
+for the four main regions of the US.</p>
+![Clean Slate](Desktop/Blank_Map.jpg)
+![The Choropleth Map is Born](Desktop/Blank_Map.jpg)
+
+<p>We went into our second Technical Review looking mainly for feedback on how we should improve the data visualization part of our
+project (How can we make the map pretty?). We received and incorporated a number of good suggestions, such as adding numberical values to the map,
+changing the color scheme, and adding the search term to the map picture (so when you save the map, you know what search term it represents).
+These suggestions resulted in a much improved visualization of our data, as you can see below.</p>
+
+<p>And thus, the evolution of NewsBox came to an end.</p>
+
+<h3>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h3>
+
+<p> - Twitter's API wrapper for Python ([python-twitter](https://github.com/bear/python-twitter) fetches the tweets.
+    - [Indico's API](https://indico.io/product) analyzes the sentiment of tweets.
+    - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) edits the SVG file.
+    
+</p>
+
+</h3>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SungwooPark/NewsBox">Newsbox</a> is maintained by <a href="https://github.com/SungwooPark">SungwooPark</a>.</span>
 
