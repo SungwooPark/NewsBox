@@ -1,6 +1,8 @@
 #NewsBox
 @authors: *Sung Park* Olin College '19 , *Mary Keenan* Olin College '19
 
+[Project Website](http://sungwoopark.github.io/NewsBox/)
+
 NewsBox is a python program that generates a graphical representation of varying positivity within Twitter toward certain topics in different regions US. NewsBox runs sentiment analysis of tweets with certain keyword in it and categorizes them by their geocode. It then calculates the average sentiment value of the region toward certain topic after processing a large number of relevant tweets from that region. As an output of the program, a map of the United States will be displayed with graphical representation of different sentiment value toward certain topic in different area.
 
 ##Getting Started
