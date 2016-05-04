@@ -53,12 +53,20 @@
             <br>
             <br>
             <pre><code>
-            indico_key = '&lt;Your Indico API Key&gt;'<br>
-            consumer_key = '&lt;Your Twitter Consumer Key (API Key)&gt;'<br>
-            indico_secret = '&lt;Your Twitter Consumer Secret (API Secret)&gt;'<br>
-            access_token_key = '&lt;Your Twitter Access token&gt;'<br>
+            indico_key = '&lt;Your Indico API Key&gt;'
+            consumer_key = '&lt;Your Twitter Consumer Key (API Key)&gt;'
+            indico_secret = '&lt;Your Twitter Consumer Secret (API Secret)&gt;'
+            access_token_key = '&lt;Your Twitter Access token&gt;'
             access_token_secret = '&lt;Your Twitter Access token secret&gt;'
-            </code></pre>
+            </code>
+        </p>
+
+        <h3>How NewsBox Works</h3>
+
+        <p>
+            The beauty of NewsBox is its structural simplicity. As you can see in the very high level code structure diagram below, there are only three major components of the program.
+            <img src="code_diagram.png" alt="Code structure diagram">
+            First component of the program is collection of tweets based on specific search term and geographical region, performed using Twitter API and python-twitter Twitter API wrapper for python. After compiling tweets using Twitter API, Indico's machine learning API is used to run a sentiment analysis on tweets. Lastly, NewsBox generates a SVG (scalable vector graphics) file of a choropleth map that represents the different sentiment toward certain keyword in the different regions of the US.
         </p>
 
 <h3>
