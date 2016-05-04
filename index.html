@@ -61,12 +61,48 @@
             </code></pre>
             <br>
             <br>
-            To generate run a NewsBox, run twitter_search.py file with a keyword like this:
+            Flask is used as a web microframework for NewsBox. Run follow code to install Flask.
             <code>
-                $ python twitter_search.py "&lt;Your keyword&gt;"
+                $ sudo pip install Flask
             </code>
-        </p>
-
+            <br>
+            <br>
+            (Optional) It is recommended to run our programming using virtualenv. If you would like to run NewsBox within virtualenv, install virtualenv by running following script and then proceed to install all the dependencies.
+            <br>
+            <code>
+                $ sudo pip install virtualenv
+            </code>
+            <br>or<br> 
+            <code>
+                $ sudo easy_install install virtualenv
+            </code>   
+            <br>or<br>
+            <code>
+                $ sudo apt-get install python-virtualenv
+            </code>
+            <br>
+            Then create virtualenv by running following script in a directory that you installed NewsBox.
+            <br>
+            <code>
+                $virtualenv venv
+            </code>
+            <br>
+            Only thing you have to do after installing virtualenv is to activate the environment everytime you want to run the program.
+            <br>
+            <code>
+            $ . venv/bin/activate
+            </code>
+     </p>
+        <h3>Running program</h3>
+        If you installed all the dependencies, running a program is simple. If you installed virtualenv, make sure that you have activated your virtualenv.
+        <br>
+        <br>
+        <code>
+        $ python hello.py
+        </code>
+        <br>
+        <br>
+        This will run NewsBox webapp in localhost:8000. Navigate to this localhost using a web browser to use NewsBox.
         <h3>How NewsBox Works</h3>
 
         <p>
