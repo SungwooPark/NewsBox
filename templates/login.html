@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+   <head>
+      <title>
+        Hiya
+      </title>
+   </head>
+<body>
+	<h1>
+	Your search term, '{{ term }}', produces the choropleth map below. 
+	</h1>
+	<img src= "{{url_for('send_pic',filename='choropleth_map.svg')}}" alt="Like what you see?"/>
+	<p> The more red the region (value closer to 1), the more positive the context in which the search term is mentioned. Blue is the opposite. Thanks for using NewsBox!
+	</p>
+</body>
+</html>
