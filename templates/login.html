@@ -2,15 +2,15 @@
 <html>
    <head>
       <title>
-        Hiya
+        Choropleth Map
       </title>
    </head>
-<body>
-	<h1>
-	Your search term, '{{ term }}', produces the choropleth map below. 
+<body background = 'http://www.ideadigezt.com/wp-content/uploads/2015/07/paper-background.jpg'>
+	<h1 style = 'font-family:courier;text-align:center;font-size:250%;'>
+	Your search term, '{{term}}', produces the choropleth map below.
 	</h1>
-	<img src= "{{url_for('send_pic',filename='choropleth_map.svg')}}" alt="Like what you see?"/>
-	<p> The more red the region (value closer to 1), the more positive the context in which the search term is mentioned. Blue is the opposite. Thanks for using NewsBox!
+	<center><img src = "{{url_for('send_pic',filename='choropleth_map.svg')}}" alt = "Like what you see?"></center>
+	<p style = 'font-family:courier;text-align:center;font-size:175%;'> The more red the region (value closer to 1), the more positive the context in which the search term is mentioned. Blue is the opposite. Thanks for using NewsBox!
 	</p>
 </body>
 </html>
