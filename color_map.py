@@ -1,12 +1,16 @@
+"""
+A module to generate CSV file of choropleth map based on sentiment values of different US regions passed as the parameters.
+"""
+
 import csv
 import webbrowser
 from BeautifulSoup import BeautifulSoup
 
 def color_mapper(value):
-    '''
+    """
     Map a value between 0 and 1 to rgb value. 0 is blue, 1 is red
     Returns a tuple of rgb value
-    '''
+    """
     if value < 0.2:
         value = 0.2
     elif value > 0.8:
