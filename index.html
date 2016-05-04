@@ -27,9 +27,29 @@
             There are a lot of topics that people from different regions react differently to. Whether it is a political topic, a slang that is local to certain region, etc, the chance is people from different region will have different attitude toward certain topics. NewsBox is a program that captures this information in visually compelling way, through a choropleth map.
         </p>
 
-<code>
-    testing code snippet
-</code>
+        <h3>
+            Getting Started
+        </h3>
+         
+        <p>
+            NewsBox uses a number of dependencies that requires installation before running the program. First install, python-twitter module, which is used to fetch tweets.
+            <code>
+                $ pip install python-twitter
+            </code>
+            Then follow install indico PyPi package, which is used to run a sentiment analysis.
+            <code>
+                $ pip install indicoio
+            </code>
+            You will have to get api keys for Twitter API and Indico API. Create your own application in <a href="https://apps.twitter.com/">Twitter Apps</a> page and get API key. You can follow indico's <a href="https://indico.io/docs">installation guide</a> to get indico api key.
+            Last step in setting up NewsBox is to create a configuration file. Create <i>config.py</i> with following code in it.
+            <code>
+            indico_key = '&lt;Your Indico API Key&gt;'
+            consumer_key = '&lt;Your Twitter Consumer Key (API Key)&gt;'
+            indico_secret = '&lt;Your Twitter Consumer Secret (API Secret)&gt;'
+            access_token_key = '&lt;Your Twitter Access token&gt;'
+            access_token_secret = '&lt;Your Twitter Access token secret&gt;'
+            </code>
+        </p>
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
