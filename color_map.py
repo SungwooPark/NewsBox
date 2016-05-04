@@ -29,15 +29,15 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
     new_map = open('choropleth_map.svg','w') 
 
     #Finding text tag that will display a topic keyword
-    # soup.find(text="US Map").replaceWith(search_query)
-    # text = soup.style
-    # soup.find('text')['x'] = 480 - (len(search_query)/2 * 35)
+    soup.find(text="US Map").replaceWith(search_query)
+    text = soup.style
+    soup.find('text')['x'] = 480 - (len(search_query)/2 * 35)
    
-    # #Display sentiment value
-    # soup.find(text="Northeastern Value").replaceWith("NE: {0:.5f}".format(ne_value))
-    # soup.find(text="West Value").replaceWith("W: {0:.5f}".format(w_value))
-    # soup.find(text="Midwest Value").replaceWith("MW: {0:.5f}".format(mw_value))
-    # soup.find(text="South Value").replaceWith("S: {0:.5f}".format(s_value))
+    #Display sentiment value
+    soup.find(text="Northeastern Value").replaceWith("NE: {0:.5f}".format(ne_value))
+    soup.find(text="West Value").replaceWith("W: {0:.5f}".format(w_value))
+    soup.find(text="Midwest Value").replaceWith("MW: {0:.5f}".format(mw_value))
+    soup.find(text="South Value").replaceWith("S: {0:.5f}".format(s_value))
  
     #Find states
     paths = soup.findAll('path')
@@ -67,7 +67,6 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
                 p['style'] = path_style + color
         except:
             continue 
-
     new_map.write(soup.prettify())
     new_map.close()
-    #webbrowser.open('choropleth_map.svg')
+    webbrowser.open('choropleth_map.svg')
