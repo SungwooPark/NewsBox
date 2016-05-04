@@ -59,7 +59,10 @@ This will run our webapp in localhost:8000. Navigate to this localhost using web
 
 ##Copyright and license
 [Python-twitter](https://github.com/bear/python-twitter), Twitter API wrapper for Python, for fetching tweets
+
 [Indico API](https://indico.io/produc) for sentiment analysis
+
 [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to process SVG file.
+
 [Flask](http://flask.pocoo.org/) as a web framework.
 
