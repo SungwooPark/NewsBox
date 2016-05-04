@@ -34,26 +34,31 @@
         <p>
             NewsBox uses a number of dependencies that requires installation before running the program. First install, python-twitter module, which is used to fetch tweets.
             <br>
+            <br>
             <code>
                 $ pip install python-twitter
             </code>
             <br>
+            <br>
             Then follow install indico PyPi package, which is used to run a sentiment analysis.
+            <br>
             <br>
             <code>
                 $ pip install indicoio
             </code>
             <br>
+            <br>
             You will have to get api keys for Twitter API and Indico API. Create your own application in <a href="https://apps.twitter.com/">Twitter Apps</a> page and get API key. You can follow indico's <a href="https://indico.io/docs">installation guide</a> to get indico api key.
             Last step in setting up NewsBox is to create a configuration file. Create <i>config.py</i> with following code in it.
             <br>
-            <code>
+            <br>
+            <pre><code>
             indico_key = '&lt;Your Indico API Key&gt;'<br>
             consumer_key = '&lt;Your Twitter Consumer Key (API Key)&gt;'<br>
             indico_secret = '&lt;Your Twitter Consumer Secret (API Secret)&gt;'<br>
             access_token_key = '&lt;Your Twitter Access token&gt;'<br>
             access_token_secret = '&lt;Your Twitter Access token secret&gt;'
-            </code>
+            </code></pre>
         </p>
 
 <h3>
