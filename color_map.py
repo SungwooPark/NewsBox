@@ -29,9 +29,9 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
     new_map = open('choropleth_map.svg','w') 
 
     #Finding text tag that will display a topic keyword
-    soup.find(text="US Map").replaceWith(search_query)
-    text = soup.style
-    soup.find('text')['x'] = 480 - (len(search_query)/2 * 35)
+    # soup.find(text="US Map").replaceWith(search_query)
+    # text = soup.style
+    # soup.find('text')['x'] = 480 - (len(search_query)/2 * 35)
    
     #Display sentiment value
     soup.find(text="Northeastern Value").replaceWith("NE: {0:.5f}".format(ne_value))
@@ -69,4 +69,4 @@ def map_states(w_value,s_value,ne_value,mw_value,search_query):
             continue 
     new_map.write(soup.prettify())
     new_map.close()
-    webbrowser.open('choropleth_map.svg')
+    #webbrowser.open('choropleth_map.svg')
