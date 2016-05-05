@@ -2,14 +2,15 @@ import twitter
 import indicoio
 import sys
 from indicoio import sentiment
-from config import indico_key,consumer_key,consumer_secret,access_token_key,access_token_secret
+#from config import indico_key,consumer_key,consumer_secret,access_token_key,access_token_secret
 import color_map
+import os
 
-indicoio.config.api_key = indico_key
-api = twitter.Api(consumer_key = consumer_key,
-    consumer_secret = consumer_secret,
-    access_token_key = access_token_key,
-    access_token_secret = access_token_secret)
+indicoio.config.api_key = os.environ['indico_key']
+api = twitter.Api(consumer_key = os.environ['consumer_key'],
+    consumer_secret = os.environ['consumer_secret'],
+    access_token_key = os.environ['access_token_key'],
+    access_token_secret = os.environ['access_token_secret'])
 
 def geo_collect_tweets(search_term,latitude,longitude,radius):
     """search for tweets within certain radius of latitude and longitude with certain keyword in them.
